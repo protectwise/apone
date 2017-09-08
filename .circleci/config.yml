@@ -1,0 +1,8 @@
+version: 2
+jobs:
+   build:
+     docker:
+       - image: circleci/node:6.1.0
+     steps:
+       - checkout
+       - run: echo "hello world"
