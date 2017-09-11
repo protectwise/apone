@@ -1,11 +1,11 @@
 {
   "name": "apone",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Configure and validate express routes with objects. Register routes in any order. Extend as necessary.",
   "main": "./lib/index.js",
   "scripts": {
     "test": "tap ./test/*.spec.js --100",
-    "lint": "eslint --config ./.eslintrc.json ./lib ./test",
+    "lint": "node_modules/eslint/bin/eslint.js --config ./.eslintrc.json ./lib ./test",
     "build": "npm run lint && npm test"
   },
   "keywords": [
