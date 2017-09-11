@@ -1,6 +1,6 @@
 # Apone
 
-Configure and validate express routes with objects. Register routes in any order. Extend as necessary.
+Configure and validate express routes with objects. Register routes in any order. Extend as necessary. 
 
 ## Install and Quick Start
 
