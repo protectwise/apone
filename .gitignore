@@ -2,4 +2,4 @@
 coverage
 .vscode
 node_modules
-
+test-results.json
