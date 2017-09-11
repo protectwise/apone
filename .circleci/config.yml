@@ -1,8 +1,10 @@
 version: 2
+machine:
+  node:
+    version: 6.9.5
+
 jobs:
    build:
-     docker:
-       - image: circleci/node:6.1.0
      steps:
        - checkout
        - run: echo "hello world"
