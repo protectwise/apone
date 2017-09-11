@@ -1,24 +1,46 @@
 version: 2
 
+dependencies:
+  pre:
+    -
+
 jobs:
-   build:
-     machine:
-       node:
-         version: 6.9.5
-       npm:
-         version: 3.10.10
-     steps:
-       - checkout
-       - run: npm install -g npm@latest
-       - restore_cache:
-           key: dependency-cache-{{ checksum "package.json" }}
-       - run: npm install
-       - save_cache:
-           key: dependency-cache-{{ checksum "package.json" }}
-           paths:
-             - ./node_modules
-       - run: npm test
-       - store_artifacts:
-          path: .nyc_output
-       - store_test_results:
-          path: test-results.json
+  build:
+    machine:
+      node:
+        version: 6.9.5
+      npm:
+        version: 3.10.10
+    steps:
+      - checkout
+      - run: npm install -g npm@latest
+      - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+  test:
+    machine:
+      node:
+        version: 6.9.5
+      npm:
+        version: 3.10.10
+    steps:
+      - checkout
+      - run: npm run lint
+      - run: npm test
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
