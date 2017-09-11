@@ -41,3 +41,5 @@ workflows:
           filters:
             branches:
               only: master
+            tags:
+              only: /(?:^0|^[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)$/
