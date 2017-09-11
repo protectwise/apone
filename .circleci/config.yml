@@ -43,6 +43,6 @@ workflows:
             - build
           filters:
             branches:
-              only: master
+              ignore: /.*/
             tags:
               only: /(?:^0|^[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)$/
