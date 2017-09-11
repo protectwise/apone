@@ -1,6 +1,6 @@
 {
   "name": "apone",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Configure and validate express routes with objects. Register routes in any order. Extend as necessary.",
   "main": "./lib/index.js",
   "scripts": {
