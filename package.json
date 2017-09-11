@@ -5,7 +5,7 @@
   "main": "./lib/index.js",
   "scripts": {
     "test": "tap ./test/*.spec.js --100",
-    "lint": "eslint --config ./.eslintrc.json ./lib ./test",
+    "lint": "./node_modules/eslint/bin/eslint.js --config ./.eslintrc.json ./lib ./test",
     "build": "npm run lint && npm test"
   },
   "keywords": [
