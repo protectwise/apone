@@ -1,6 +1,6 @@
 {
   "name": "apone",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Configure and validate express routes with objects. Register routes in any order. Extend as necessary.",
   "main": "./lib/index.js",
   "scripts": {
@@ -12,6 +12,9 @@
     "express"
   ],
   "author": "collin.yablon@protectwise.com",
+  "contributors": [
+    "jonathan.nicholson@protectwise.com"
+  ],
   "license": "MIT",
   "dependencies": {
     "joi": "^10.4.1"
