@@ -9,21 +9,21 @@ jobs:
          version: 3.10.10
      steps:
        - checkout
-       - run: 'sudo npm install -g npm@latest'
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run: npm install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
-      - run: npm test
-      - run: ./node_modules/.bin/nyc report --reporter=text-lcov
-      - store_artifacts:
+       - run: sudo npm install -g npm@latest
+       - restore_cache:
+           key: dependency-cache-{{ checksum "package.json" }}
+       - run: npm install
+       - save_cache:
+           key: dependency-cache-{{ checksum "package.json" }}
+           paths:
+             - ./node_modules
+       - run: npm test
+       - run: ./node_modules/.bin/nyc report --reporter=text-lcov
+       - store_artifacts:
           path: test-results.xml
           prefix: tests
-      - store_artifacts:
+       - store_artifacts:
           path: coverage
           prefix: coverage
-      - store_test_results:
+       - store_test_results:
           path: test-results.xml
