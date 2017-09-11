@@ -9,7 +9,7 @@ jobs:
          version: 3.10.10
      steps:
        - checkout
-       - run: sudo npm install -g npm@latest
+       - run: npm install -g npm@latest
        - restore_cache:
            key: dependency-cache-{{ checksum "package.json" }}
        - run: npm install
