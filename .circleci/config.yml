@@ -9,13 +9,13 @@ jobs:
          version: 3.10.10
      steps:
        - checkout
-      - run:
+       - run:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: npm install
+          name: install-npm-wee
           command: npm install
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
