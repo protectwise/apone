@@ -1,9 +1,5 @@
 version: 2
 
-dependencies:
-  pre:
-    -
-
 jobs:
   build:
     machine:
@@ -43,7 +39,7 @@ workflows:
         requires:
           - build
         filters:
-          tags: /v[0-9]+(\.[0-9]+)*/
+          tags:
+            only: /v[0-9]+(\.[0-9]+)*/
           branches:
-            only:
-              - master
+            only: /master/
