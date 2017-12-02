@@ -14,7 +14,7 @@ let app = Express()
 let apone = new Apone(app)
 
 apone.register({
-  path: '/hello'
+  path: '/hello',
   method: 'get',
   handle: (req, res, next) => {
 
@@ -22,6 +22,8 @@ apone.register({
     return next()
   }
 })
+
+app.listen(3000)
 ```
 
 # table of contents
@@ -93,7 +95,7 @@ By defining the following properties, routes opt-into different behaviors. Each 
       state.internalOnly,
       (req, res, next) => {
 
-        req.send(state.pupperRepository.update(req.body))
+        res.send(state.pupperRepository.update(req.body))
         return next()
       }
     ]
